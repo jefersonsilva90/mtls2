@@ -18,10 +18,10 @@ export class RequisicaoService {
       }),
       params: new HttpParams(),
       tls: {
-        key: '/caminho/para/a/chave/privada/do/cliente',
-        cert: '/caminho/para/o/certificado/do/cliente',
-        ca: '/caminho/para/o/certificado/da/autoridade/certificadora',
-        passphrase: 'senha-para-desbloquear-a-chave-privada-do-cliente'
+        key: '../certs/client.key',    //'/caminho/para/a/chave/privada/do/cliente',
+        cert: '../certs/client.pfx',    //'/caminho/para/o/certificado/do/cliente',
+        //ca: '/caminho/para/o/certificado/da/autoridade/certificadora',
+        passphrase: "jeferson" //'senha-para-desbloquear-a-chave-privada-do-cliente'
       }
     };
     return this.httpclient.post(`${API_PATH}`, null, httpOptions).toPromise();

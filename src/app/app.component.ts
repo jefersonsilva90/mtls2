@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { RequisicaoService } from './requisicao.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mtls2';
+
+  constructor(private requisicaoservice: RequisicaoService){}
+
+  enviarRequisicao(){
+    this.requisicaoservice.enviarRequisicao()
+      .then(req => console.log(req))
+      .catch(erro => console.log(erro));
+  }
+
 }
